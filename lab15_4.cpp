@@ -17,3 +17,21 @@ int main(){
 	
 	return 0;
 }
+
+void shuffle(int &a,int &b,int &c,int &d){
+	int Pom_me_sog_H[4]={a,b,c,d};
+	int Double_H[4]={};
+	for(int i = 0 ; i<4;i++){
+			Double_H[i]=rand()%4;
+			for(int j =0;j<i;j++){
+				if(Double_H[i] == Double_H[j]){
+					i--;
+					break;
+				}
+			}
+			a = Pom_me_sog_H[Double_H[0]];
+			b = Pom_me_sog_H[Double_H[1]];
+			c = Pom_me_sog_H[Double_H[2]];
+			d = Pom_me_sog_H[Double_H[3]];
+	}
+}
